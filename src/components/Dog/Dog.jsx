@@ -39,7 +39,10 @@ export const Dog = ({ image }) => (
 const renderOverlayMessage = () => {
     return message.map((char, index) => {
         return (
-            <span className={overlayTextStyles(index % BRAND_COLORS.length)}>
+            <span
+                key={`${char}-${index}`}
+                className={overlayTextStyles(index % BRAND_COLORS.length)}
+            >
                 {char}
             </span>
         );
